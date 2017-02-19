@@ -1,5 +1,5 @@
 var clickies = 0;
-function Clickies(number) {
+function clickies(number) {
   clickies = clickies + number;
   document.getElementById("clickies").innerHTML = clickies;
 };
