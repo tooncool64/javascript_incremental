@@ -13,3 +13,4 @@ function getTotal(number) {
     return cookies
     document.getElementById("totals").innerHTML = totals;
 };
+getTotal(number);
