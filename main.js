@@ -1,4 +1,5 @@
 var cookies = 0;
+var totals = 0;
 
 function cookieClick(number){
     cookies = cookies + 1
@@ -13,4 +14,3 @@ function getTotal(number) {
     totals = cookies - cookies + 1
     document.getElementById("totals").innerHTML = totals;
 };
-getTotal(number);
