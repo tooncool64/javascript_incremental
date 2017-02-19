@@ -14,3 +14,11 @@ function getTotal(number) {
     totals = cookies - 50
     document.getElementById("totals").innerHTML = totals;
 };
+if (totals < 50) {
+    document.write("Goal Complete!)
+                   }
+                  
+                   
+                  
+                 
+    
