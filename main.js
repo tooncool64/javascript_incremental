@@ -11,7 +11,7 @@ function cookieClick2(number){
 };
 function getTotal(number) {
     totals = cookies
-    document.getElementById("totals").innerHTML = totals;
+    document.getElementById("totals").innerHTML = cookies;
 };
 if (cookies > 50) {
     document.write("Goal Complete!");
