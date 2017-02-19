@@ -6,4 +6,5 @@ function cookieClick(number){
 };
 if cookies < 1000 {
     console.log("wow");
+}{   else console.log("dang");
 }
