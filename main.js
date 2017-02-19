@@ -15,9 +15,10 @@ function getTotal(number) {
     document.getElementById("totals").innerHTML = totals;
 };
 function goalTotal(number) {
-    return totals;
+    return totals + number;
     document.getElementById("totals".innerHTML = totals;
                             };
 if (totals > 50) {
     document.write("Goal Complete!");
 };
+goalTotal(1);
