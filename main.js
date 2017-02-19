@@ -11,11 +11,9 @@ function cookieClick2(number){
     document.getElementById("cookies").innerHTML = cookies;
 };
 function getTotal(number) {
-    totals = cookies - 50
+    totals = cookies
     document.getElementById("totals").innerHTML = totals;
 };
 if (totals > 50) {
     document.write("Goal Complete!");
-} else {
-    document.write("Goal Not Completed.");
 };
