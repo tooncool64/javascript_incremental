@@ -1,4 +1,4 @@
-var cookies = 0;
+var cookies = document.getElementById("cookies");
 
 function cookieClick(number){
     cookies = cookies + 1
@@ -11,7 +11,7 @@ function cookieClick2(number){
 };
 function getTotal(number) {
     totals = cookies
-    document.getElementById("totals").innerHTML = cookies;
+    document.getElementById("totals").innerHTML = totals;
 };
 if (cookies > 50) {
     document.write("Goal Complete!");
