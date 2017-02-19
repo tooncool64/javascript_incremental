@@ -16,4 +16,6 @@ function getTotal(number) {
 };
 if (totals > 50) {
     document.write("Goal Complete!");
+} else {
+    document.write("Goal Not Completed.");
 };
