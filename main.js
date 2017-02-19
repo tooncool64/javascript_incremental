@@ -11,6 +11,6 @@ function cookieClick2(number){
     document.getElementById("cookies").innerHTML = cookies;
 };
 function getTotal(number) {
-    totals = cookies - cookies + 1
+    totals = cookies - 50
     document.getElementById("totals").innerHTML = totals;
 };
