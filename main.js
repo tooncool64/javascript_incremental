@@ -1,10 +1,6 @@
 var cookies = 0;
 
 function cookieClick(number){
-    cookies = Math.pow(3, 4) + cookies
+    cookies = Math.pow(7, 21) + cookies
     document.getElementById("cookies").innerHTML = cookies;
 };
-if cookies < 1000 {
-    console.log("wow");
-}{   else console.log("dang");
-}
