@@ -1,6 +1,6 @@
 var cookies = 0;
 
 function cookieClick(number){
-    cookies = Math.pow(cookies, 21) + 2
+    cookies = cookies + 1
     document.getElementById("cookies").innerHTML = cookies;
 };
