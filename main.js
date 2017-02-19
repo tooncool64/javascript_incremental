@@ -1,4 +1,5 @@
 var cookies = 0
+var totals = 0
 
 
 function cookieClick(number){
