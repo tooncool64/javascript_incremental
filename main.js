@@ -16,4 +16,5 @@ function getTotal(number) {
 };
 if (totals > 50) {
     document.write("Goal Complete!");
+    document.getElementById("totals").innerHTML = totals;
 };
