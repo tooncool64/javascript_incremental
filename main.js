@@ -1,5 +1,5 @@
 var cookies = 0
-var totals = document.getElementById("totals");
+var totals = 0
 
 function cookieClick(number){
     cookies = cookies + 1
