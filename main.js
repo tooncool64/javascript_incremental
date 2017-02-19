@@ -10,7 +10,7 @@ function cookieClick2(number){
     document.getElementById("cookies").innerHTML = cookies;
 };
 function getTotal(number) {
-    return cookies
+    return cookieClick2(number);
     document.getElementById("totals").innerHTML = totals;
 };
 getTotal(number);
