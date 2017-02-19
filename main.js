@@ -7,4 +7,5 @@ function cookieClick(number){
 
 function cookieClick2(number){
     cookies = cookies + 2
-    document.getElementById("cookies2").innerHTML = cookies;
+    document.getElementById("cookies").innerHTML = cookies;
+};
