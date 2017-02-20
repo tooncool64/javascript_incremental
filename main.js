@@ -26,3 +26,10 @@ var save = {
 }
     localStorage.setItem("save",JSON.stringify(save)); 
 };
+function load(){
+var savegame = JSON.parse(localStorage.getItem("save")); 
+    
+}
+function deleteSave(){
+localStorage.removeItem("save")    
+}
