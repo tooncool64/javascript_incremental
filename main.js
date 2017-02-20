@@ -1,5 +1,9 @@
 var cookies = 0
 var totals = 0
+var globalGame = {
+    cookies: cookies,
+    totals: totals
+}
 
 function cookieClick(number){
     cookies = cookies + 1
@@ -18,25 +22,23 @@ if (totals > 50) {
     document.write("Goal Complete!");
     document.getElementById("totals").innerHTML = totals;
 };
-function save(){
-var save = {
-    cookies: cookies,
-    totals: totals
-    
+function supports_html5_storage() {
+try{
+localStorage.setItem('test', '7');
+if(localStorage.getItem('test')=== '7'){
+localStorage.removeItem('test');
+return true;
 };
-    localStorage.setItem("save",JSON.stringify(save)); 
 };
-window.onload = function load(){
-var save = {
-    cookies: cookies,
-    totals: totals
-    
+catch(er){}
+return false;
 };
-var savegame = JSON.parse(localStorage.getItem("save")); 
-    if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
-    if (typeof savegame.totals !== "undefined") totals = savegame.totals;
-    
+function save() {
+window.localStorage['globalGame'] = JSON.stringify(game);
 };
-function deleteSave(){
-localStorage.removeItem("save")    
+function load() {
+game = JSON.parse(window.localStorage['globalGame']);
+};
+function deleteSave() {
+localStorage.removeItem('globalGame');
 };
