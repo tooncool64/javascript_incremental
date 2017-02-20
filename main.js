@@ -28,6 +28,8 @@ var save = {
 };
 function load(){
 var savegame = JSON.parse(localStorage.getItem("save")); 
+    if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
+    if (typeof savegame.totals !== "undefined") totals = savegame.totals;
     
 };
 function deleteSave(){
