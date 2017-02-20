@@ -22,23 +22,15 @@ if (totals > 50) {
     document.write("Goal Complete!");
     document.getElementById("totals").innerHTML = totals;
 };
-function supports_html5_storage() {
-try{
-localStorage.setItem('test', '7');
-if(localStorage.getItem('test')=== '7'){
-localStorage.removeItem('test');
-return true;
-};
-};
-catch(er){}
-return false;
-};
+
 function save() {
 window.localStorage['globalGame'] = JSON.stringify(game);
 };
+
 function load() {
 game = JSON.parse(window.localStorage['globalGame']);
 };
+
 function deleteSave() {
 localStorage.removeItem('globalGame');
 };
