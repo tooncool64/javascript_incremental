@@ -27,8 +27,8 @@ function deleteSave() {
 
 function gameLoop() {
    var game = {
-    cookies: game.cookies,
-    totals: game.totals
+    cookies: 0,
+    totals: 0
 };
     if (game.totals > 50) {
         document.write("Goal Complete!");
