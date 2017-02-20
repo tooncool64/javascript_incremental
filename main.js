@@ -24,13 +24,25 @@ if (totals > 50) {
 };
 
 function save() {
-window.localStorage['globalGame'] = JSON.stringify(game);
+var globalGame = {
+    cookies: cookies,
+    totals: totals
+}
+    window.localStorage['globalGame'] = JSON.stringify(game);
 };
 
 function load() {
-game = JSON.parse(window.localStorage['globalGame']);
+var globalGame = {
+    cookies: cookies,
+    totals: totals
+}
+    game = JSON.parse(window.localStorage['globalGame']);
 };
 
 function deleteSave() {
-localStorage.removeItem('globalGame');
+var globalGame = {
+    cookies: cookies,
+    totals: totals
+}
+    localStorage.removeItem('globalGame');
 };
