@@ -23,10 +23,15 @@ var save = {
     cookies: cookies,
     totals: totals
     
-}
+};
     localStorage.setItem("save",JSON.stringify(save)); 
 };
 window.onload = function load(){
+var save = {
+    cookies: cookies,
+    totals: totals
+    
+};
 var savegame = JSON.parse(localStorage.getItem("save")); 
     if (typeof savegame.cookies !== "undefined") cookies = savegame.cookies;
     if (typeof savegame.totals !== "undefined") totals = savegame.totals;
