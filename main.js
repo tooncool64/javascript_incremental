@@ -1,6 +1,6 @@
 var game = {
-    cookies: 0,
-    totals: 0
+    cookies: game.cookies,
+    totals: game.totals
 };
 
 function cookieClick(number){
@@ -26,10 +26,16 @@ function deleteSave() {
 };
 
 function gameLoop() {
+   var game = {
+    cookies: game.cookies,
+    totals: game.totals
+};
     if (game.totals > 50) {
         document.write("Goal Complete!");
         document.getElementById("totals").innerHTML = game.totals;
+      
     };
+    window.localStorage.setItem("mySaveData", JSON.stringify(game));
 }
 
 setInterval(gameLoop, 100);
