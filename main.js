@@ -29,7 +29,7 @@ var save = {
 function load(){
 var savegame = JSON.parse(localStorage.getItem("save")); 
     
-}
+};
 function deleteSave(){
 localStorage.removeItem("save")    
-}
+};
