@@ -26,16 +26,10 @@ function deleteSave() {
 };
 
 function gameLoop() {
-   var game = {
-    cookies: 0,
-    totals: 0
-};
     if (game.totals > 50) {
         document.write("Goal Complete!");
         document.getElementById("totals").innerHTML = game.totals;
-      
     };
-    window.localStorage.setItem("mySaveData", JSON.stringify(game));
 }
 
 setInterval(gameLoop, 100);
