@@ -13,11 +13,11 @@ function getTotal(number) {
     document.getElementById("totals").innerHTML = game.totals;
 };
 
-function save() {
+function saveGame() {
     window.localStorage.setItem("mySaveData", JSON.stringify(game));
 };
 
-function load() {
+function loadGame() {
     game = JSON.parse(window.localStorage.getItem("mySaveData"));
 };
 
