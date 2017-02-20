@@ -3,7 +3,7 @@ var totals = 0
 var globalGame = {
     cookies: cookies,
     totals: totals
-}
+};
 
 function cookieClick(number){
     cookies = cookies + 1
