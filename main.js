@@ -30,6 +30,6 @@ function gameLoop() {
         document.write("Goal Complete!");
         document.getElementById("totals").innerHTML = game.totals;
     };
-};
+}
 
 setInterval(gameLoop, 100);
