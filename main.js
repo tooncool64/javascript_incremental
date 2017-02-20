@@ -1,6 +1,6 @@
 var game = {
-    cookies: game.cookies,
-    totals: game.totals
+    cookies: 0,
+    totals: 0
 };
 
 function cookieClick(number){
