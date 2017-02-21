@@ -1,3 +1,4 @@
+
 var game = {
     clicks: 0,
     totals: 0,
@@ -45,6 +46,7 @@ function gameLoop() {
     };
     function() {
         cookieClick(game.macros);
+    };
 };
 
 setInterval(gameLoop, 100);
