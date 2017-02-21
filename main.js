@@ -15,14 +15,14 @@ function getTotal(number) {
 };
 
 function buyMacro() {
-    var macroCost = Math.floor(10 * Math.pow(1.1,game.macros));
+    var macroCost = Math.floor(10 * Math.pow(1.1, game.macros));
     if (clicks >= macroCost) {
         macros = macros + 1;
         clicks = clicks - macroCost;
         document.getElementById('macros').innerHTML = game.macros;
         document.getElementById('clicks').innerHTML = game.clicks;
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,game.macros));
+    var nextCost = Math.floor(10 * Math.pow(1.1, game.macros));
     document.getElementById('macroCost').innerHTML = nextCost;
 };
     
