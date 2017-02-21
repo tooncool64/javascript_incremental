@@ -45,4 +45,8 @@ function gameLoop() {
     };
 };
 
-setInterval(gameLoop, 100);
+setInterval(function(){
+	
+	clickClick(macros);
+	
+}, 100);
