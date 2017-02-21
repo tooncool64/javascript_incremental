@@ -1,6 +1,7 @@
 var game = {
     clicks: 0,
-    totals: 0
+    totals: 0,
+    macros: 0
 };
 
 function clickClick(number){
@@ -13,6 +14,18 @@ function getTotal(number) {
     document.getElementById("totals").innerHTML = game.totals;
 };
 
+function buyMacro() {
+    var macroCost = Math.floor(10 * Math.pow(1.1,game.macros));
+    if (clicks >= macroCost) {
+        macros = macros + 1;
+        clicks = clicks - macroCost;
+        document.getElementById('macros').innerHTML = game.macros;
+        document.getElementById('clicks').innerHTML = game.clicks;
+    };
+    var nextCost = Math.floor(10 * Math.pow(1.1,macros));
+    document.getElementById('macroCost').innerHTML = nextCost;
+};
+    
 function saveGame() {
     window.localStorage.setItem("mySaveData", JSON.stringify(game));
 };
@@ -30,6 +43,9 @@ function gameLoop() {
         document.write("Goal Complete!");
         document.getElementById("totals").innerHTML = game.totals;
     };
-}
+};
 
 setInterval(gameLoop, 100);
+window.setInterval(function() {
+    cookieClick(macros);
+}, 100);
