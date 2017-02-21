@@ -52,11 +52,11 @@ function deleteSave() {
 };
 
 function gameLoop() {
-    return buyMacro(game.mouses);
 
 };
 
 function gameLoop2() {
+    return clickClick(game.macros);
 
 };
 setInterval(gameLoop, 100);
