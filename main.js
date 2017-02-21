@@ -81,8 +81,16 @@ function deleteSave() {
 
 function gameLoop() {
     return upgradeMacros(game.mouses);
+};
+
+function gameLoop2() {
     return upgradeMouses(game.humans);
+};
+
+function gameLoop3() {
     return clickClick(game.macros);
 };
 
 setInterval(gameLoop, 1000);
+setInterval(gameLoop2, 1000);
+setInterval(gameLoop3, 1000);
