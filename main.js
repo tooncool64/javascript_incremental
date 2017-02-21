@@ -44,9 +44,9 @@ function gameLoop() {
         document.getElementById("totals").innerHTML = game.totals;
     };
 };
-function gameLoop2() {
+/*function gameLoop2() {
     return clickClick(game.macros);
 }
-
+*/
 setInterval(gameLoop, 100);
 setInterval(gameLoop2, 1000);
