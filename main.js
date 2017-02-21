@@ -59,7 +59,7 @@ function deleteSave() {
     localStorage.removeItem("mySaveData");
 };
 
-function gameLoop() {
+function gameLoop2() {
     return upgradeMacros(game.mouses);
 };
 
