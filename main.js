@@ -1,11 +1,11 @@
 var game = {
-    cookies: 0,
+    clicks: 0,
     totals: 0
 };
 
-function cookieClick(number){
-    game.cookies += number;
-    document.getElementById("cookies").innerHTML = game.cookies;
+function clickClick(number){
+    game.clicks += number;
+    document.getElementById("clicks").innerHTML = game.clicks;
 };
 
 function getTotal(number) {
