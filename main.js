@@ -60,7 +60,7 @@ function deleteSave() {
 };
 
 function gameLoop() {
-    return upgradeMacros
+    return upgradeMacros(game.mouses);
 };
 
 function gameLoop2() {
