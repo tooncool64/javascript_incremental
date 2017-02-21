@@ -16,9 +16,9 @@ function getTotal(number) {
 
 function buyMacro() {
     var macroCost = Math.floor(10 * Math.pow(1.1, game.macros));
-    if (clicks >= macroCost) {
-        macros = macros + 1;
-        clicks = clicks - macroCost;
+    if (game.clicks >= macroCost) {
+        game.macros = game.macros + 1;
+        game.clicks = game.clicks - macroCost;
         document.getElementById('macros').innerHTML = game.macros;
         document.getElementById('clicks').innerHTML = game.clicks;
     };
@@ -47,5 +47,5 @@ function gameLoop() {
 
 setInterval(gameLoop, 100);
 window.setInterval(function() {
-    cookieClick(macros);
+    cookieClick(game.macros);
 }, 100);
