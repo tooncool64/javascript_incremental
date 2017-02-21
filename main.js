@@ -46,7 +46,6 @@ function gameLoop() {
 };
 function gameLoop2() {
     return clickClick(game.macros);
-    return getTotal()
 }
 
 setInterval(gameLoop, 100);
