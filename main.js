@@ -43,7 +43,6 @@ function gameLoop() {
         document.write("Goal Complete!");
         document.getElementById("totals").innerHTML = game.totals;
     };
+    return clickClick(game.macros);
 };
-setInterval(gameLoop, 100)(function() {
-    clickClick(game.macros)
-});
+setInterval(gameLoop, 100);
