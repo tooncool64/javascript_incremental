@@ -22,7 +22,7 @@ function buyMacro() {
         document.getElementById('macros').innerHTML = game.macros;
         document.getElementById('clicks').innerHTML = game.clicks;
     };
-    var nextCost = Math.floor(10 * Math.pow(1.1,macros));
+    var nextCost = Math.floor(10 * Math.pow(1.1,game.macros));
     document.getElementById('macroCost').innerHTML = nextCost;
 };
     
