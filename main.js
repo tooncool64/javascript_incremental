@@ -35,7 +35,7 @@ function buyMouse() {
         document.getElementById('mouses').innerHTML = game.mouses;
         document.getElementById('clicks').innerHTML = game.mouses;
     };
-    var nextCost2 = Math.floor(100 * Math.pow(1.1, game.mouses));
+    var nextCost2 = Math.floor(100 * Math.pow(2.2, game.mouses));
     document.getElementById('mouseCost').innerHTML = nextCost2;
 };
     
@@ -57,7 +57,7 @@ function gameLoop() {
 };
 
 function gameLoop2() {
-    return clickClick(game.macros);
+
 };
 setInterval(gameLoop, 100);
 setInterval(gameLoop2, 1000);
