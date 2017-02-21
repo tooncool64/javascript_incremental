@@ -38,7 +38,13 @@ function buyMouse() {
     var nextCost2 = Math.floor(100 * Math.pow(2.2, game.mouses));
     document.getElementById('mouseCost').innerHTML = nextCost2;
 };
-    
+
+function upgradeMacros() {
+    if (game.mouses >= 1) {
+        game.macros = game.macros + 1;
+    };
+};
+
 function saveGame() {
     window.localStorage.setItem("mySaveData", JSON.stringify(game));
 };
@@ -52,7 +58,7 @@ function deleteSave() {
 };
 
 function gameLoop() {
-
+    return upgradeMacros
 };
 
 function gameLoop2() {
