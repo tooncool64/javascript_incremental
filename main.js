@@ -1,4 +1,3 @@
-
 var game = {
     clicks: 0,
     totals: 0,
