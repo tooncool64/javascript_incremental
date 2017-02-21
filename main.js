@@ -39,9 +39,9 @@ function buyMouse() {
     document.getElementById('mouseCost').innerHTML = nextCost2;
 };
 
-function upgradeMacros() {
+function upgradeMacros(number) {
     if (game.mouses >= 1) {
-        game.macros = game.macros + 1;
+        game.macros += number;
         document.getElementById('mouses').innerHTML = game.mouses;
         document.getElementById('macros').innerHTML = game.macros;
     };
