@@ -42,6 +42,8 @@ function buyMouse() {
 function upgradeMacros() {
     if (game.mouses >= 1) {
         game.macros = game.macros + 1;
+        document.getElementById('mouses').innerHTML = game.mouses;
+        document.getElementById('macros').innerHTML = game.macros;
     };
 };
 
