@@ -1,6 +1,5 @@
 var game = {
     clicks: 0,
-    totals: 0,
     macros: 0,
     mouses: 0
 };
@@ -8,11 +7,6 @@ var game = {
 function clickClick(number){
     game.clicks += number;
     document.getElementById("clicks").innerHTML = game.clicks;
-};
-
-function getTotal(number) {
-    game.totals += number;
-    document.getElementById("totals").innerHTML = game.totals;
 };
 
 function buyMacro() {
