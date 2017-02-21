@@ -1,7 +1,8 @@
 var game = {
     clicks: 0,
     totals: 0,
-    macros: 0
+    macros: 0,
+    mouses: 0
 };
 
 function clickClick(number){
@@ -25,6 +26,18 @@ function buyMacro() {
     var nextCost = Math.floor(10 * Math.pow(1.1, game.macros));
     document.getElementById('macroCost').innerHTML = nextCost;
 };
+
+function buyMouse() {
+    var mouseCost = Math.floor(100 * Math.pow(1.1, game.mouses));
+    if (game.clicks >= mouseCost) {
+        game.mouses = game.mouses + 1;
+        game.clicks = game.clicks - mouseCost;
+        document.getElementById('mouses').innerHTML = game.mouses;
+        document.getElementById('clicks').innerHTML = game.mouses;
+    };
+    var nextCost2 = Math.floor(100 * Math.pow(1.1, game.mouses));
+    document.getElementById('mouseCost').innerHTML = nextCost2;
+};
     
 function saveGame() {
     window.localStorage.setItem("mySaveData", JSON.stringify(game));
@@ -39,6 +52,7 @@ function deleteSave() {
 };
 
 function gameLoop() {
+    return buyMacro(game.mouses);
 
 };
 
