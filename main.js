@@ -38,15 +38,16 @@ function deleteSave() {
     localStorage.removeItem("mySaveData");
 };
 
-function gameLoop() {
+/*function gameLoop() {
     if (game.totals > 50) {
         document.write("Goal Complete!");
         document.getElementById("totals").innerHTML = game.totals;
     };
 };
-/*function gameLoop2() {
-    return clickClick(game.macros);
-}
 */
+function gameLoop2() {
+    return clickClick(game.macros);
+};
+
 setInterval(gameLoop, 100);
 setInterval(gameLoop2, 1000);
