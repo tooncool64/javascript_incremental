@@ -16,38 +16,38 @@ function getTotal(number) {
 };
 
 function buyMacro() {
-    var macroCost = Math.floor(10));
+    var macroCost = Math.floor(10 * 1));
     if (game.clicks >= macroCost) {
         game.macros = game.macros + 1;
         game.clicks = game.clicks - macroCost;
         document.getElementById('macros').innerHTML = game.macros;
         document.getElementById('clicks').innerHTML = game.clicks;
     };
-    var nextCost = Math.floor(10));
+    var nextCost = Math.floor(10 * 1));
     document.getElementById('macroCost').innerHTML = nextCost;
 };
 
 function buyMouse() {
-    var mouseCost = Math.floor(100));
+    var mouseCost = Math.floor(100 * 1));
     if (game.clicks >= mouseCost) {
         game.mouses = game.mouses + 1;
         game.clicks = game.clicks - mouseCost;
         document.getElementById('mouses').innerHTML = game.mouses;
         document.getElementById('clicks').innerHTML = game.clicks;
     };
-    var nextCost2 = Math.floor(100));
+    var nextCost2 = Math.floor(100 * 1));
     document.getElementById('mouseCost').innerHTML = nextCost2;
 };
 
 function buyHuman() {
-    var humanCost = Math.floor(10000));
+    var humanCost = Math.floor(10000 * 1));
     if (game.clicks >= humanCost) {
         game.humans = game.humans + 1;
         game.clicks = game.clicks - humanCost;
         document.getElementById('humans').innerHTML = game.humans;
         document.getElementById('clicks').innerHTML = game.clicks;
     };
-    var nextCost3 = Math.floor(10000));
+    var nextCost3 = Math.floor(10000 * 1));
     document.getElementById('humanCost').innerHTML = nextCost3;
 };
 
