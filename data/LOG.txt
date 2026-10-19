@@ -1,0 +1,4 @@
+22:53:31 == step dem_3dep_cog_fallback
+22:53:36   dem10m bytes 2608216
+22:53:36 == ok dem_3dep_cog_fallback 5s
+22:53:36 done
