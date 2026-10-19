@@ -170,6 +170,28 @@ def naip():
         ty += tile; r += 1
     json.dump(meta, open(os.path.join(OUT, 'naip_meta.json'), 'w'), indent=1)
 
+@step('naip_full_2m')
+def naip_full():
+    from pyproj import Transformer
+    tr = Transformer.from_crs('EPSG:4326', 'EPSG:26910', always_xy=True)
+    xs, ys = zip(*[tr.transform(x, y) for x, y in [(W, S), (E, S), (W, N), (E, N)]])
+    x0, x1, y0, y1 = min(xs), max(xs), min(ys), max(ys)
+    res = 2.0; tile = 2048 * res; meta = {'crs': 'EPSG:26910', 'res': res, 'tiles': []}
+    ty = y0; r = 0
+    while ty < y1:
+        tx = x0; c = 0
+        while tx < x1:
+            bx1, by1 = min(tx + tile, x1), min(ty + tile, y1)
+            w, h = round((bx1 - tx) / res), round((by1 - ty) / res)
+            params = {'bbox': f'{tx},{ty},{bx1},{by1}', 'bboxSR': 26910, 'imageSR': 26910, 'size': f'{w},{h}', 'format': 'jpg', 'compressionQuality': 88, 'f': 'image'}
+            b = get('https://imagery.nationalmap.gov/arcgis/rest/services/USGSNAIPImagery/ImageServer/exportImage?' + urllib.parse.urlencode(params), timeout=600)
+            if b[:2] != b'\xff\xd8': raise RuntimeError('not jpeg')
+            fn = f'naip2m_r{r}_c{c}.jpg'; open(os.path.join(OUT, fn), 'wb').write(b)
+            meta['tiles'].append({'file': fn, 'bbox': [tx, ty, bx1, by1], 'size': [w, h]}); log('  naip2m', fn, w, h, len(b))
+            tx += tile; c += 1
+        ty += tile; r += 1
+    json.dump(meta, open(os.path.join(OUT, 'naip2m_meta.json'), 'w'), indent=1)
+
 if __name__ == '__main__':
     which = sys.argv[1:] or ['osm', 'dem', 'dem_cog', 'overture', 'naip']
     for w in which:

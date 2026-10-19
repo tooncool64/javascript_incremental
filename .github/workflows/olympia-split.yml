@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        step: [osm, dem, dem_cog, overture, naip]
+        step: [naip_full]
     steps:
       - uses: actions/checkout@v4
         with:
