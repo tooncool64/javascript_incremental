@@ -1,0 +1,12 @@
+22:57:23 == step naip_full_2m
+22:57:29   naip2m naip2m_r0_c0.jpg 2048 2048 1872115
+22:57:37   naip2m naip2m_r0_c1.jpg 2048 2048 1893092
+22:57:44   naip2m naip2m_r0_c2.jpg 88 2048 84265
+22:58:02   naip2m naip2m_r1_c0.jpg 2048 2048 1724419
+22:58:16   naip2m naip2m_r1_c1.jpg 2048 2048 1793064
+22:58:32   naip2m naip2m_r1_c2.jpg 88 2048 70802
+22:58:35   naip2m naip2m_r2_c0.jpg 2048 354 218764
+22:58:39   naip2m naip2m_r2_c1.jpg 2048 354 279347
+22:58:39   naip2m naip2m_r2_c2.jpg 88 354 14701
+22:58:39 == ok naip_full_2m 76s
+22:58:39 done
