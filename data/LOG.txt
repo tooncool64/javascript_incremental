@@ -1,0 +1,12 @@
+22:53:12 == step dem_3dep_imageserver
+22:53:18   dem tile dem_r0_c0.tif 2000 2000 15155299
+22:53:25   dem tile dem_r0_c1.tif 2000 2000 14922355
+22:53:28   dem tile dem_r0_c2.tif 184 2000 1414254
+22:53:33   dem tile dem_r1_c0.tif 2000 2000 14707722
+22:53:42   dem tile dem_r1_c1.tif 2000 2000 14741333
+22:53:43   dem tile dem_r1_c2.tif 184 2000 1420313
+22:53:45   dem tile dem_r2_c0.tif 2000 450 3246285
+22:53:51   dem tile dem_r2_c1.tif 2000 450 3471940
+22:53:55   dem tile dem_r2_c2.tif 184 450 319793
+22:53:55 == ok dem_3dep_imageserver 43s
+22:53:55 done
