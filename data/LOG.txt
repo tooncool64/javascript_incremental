@@ -1,0 +1,12 @@
+22:53:13 == step naip_imagery
+22:53:21   naip tile naip_r0_c0.jpg 2048 2048 1074753
+22:53:25   naip tile naip_r0_c1.jpg 2048 2048 1169688
+22:53:30   naip tile naip_r0_c2.jpg 468 2048 294774
+22:53:44   naip tile naip_r1_c0.jpg 2048 2048 1067563
+22:53:58   naip tile naip_r1_c1.jpg 2048 2048 1251235
+22:54:02   naip tile naip_r1_c2.jpg 468 2048 295701
+22:54:13   naip tile naip_r2_c0.jpg 2048 799 308047
+22:54:17   naip tile naip_r2_c1.jpg 2048 799 375218
+22:54:23   naip tile naip_r2_c2.jpg 468 799 102736
+22:54:23 == ok naip_imagery 71s
+22:54:23 done
