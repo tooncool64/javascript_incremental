@@ -1,0 +1,40 @@
+name: Fetch Olympia data (parallel)
+on:
+  push:
+    branches: [olympia-data]
+    paths: ['.github/workflows/olympia-split.yml', 'RUN_SPLIT']
+permissions:
+  contents: write
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    strategy:
+      fail-fast: false
+      matrix:
+        step: [osm, dem, dem_cog, overture, naip]
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: olympia-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install tools
+        run: |
+          if [ "${{ matrix.step }}" = "dem_cog" ]; then sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin > /dev/null; fi
+          pip install -q pyproj overturemaps
+      - name: Fetch ${{ matrix.step }}
+        run: |
+          mkdir -p out && cd out && cp ../fetch_olympia.py . && timeout 50m python fetch_olympia.py ${{ matrix.step }} || true
+          ls -la data || true
+      - name: Save to branch olympia-${{ matrix.step }}
+        run: |
+          cd out
+          git init -q -b olympia-${{ matrix.step }}
+          git config user.name "olympia-data-bot"
+          git config user.email "olympia-data-bot@users.noreply.github.com"
+          find data -type f -size +95M -print -delete
+          git add data
+          git commit -qm "Olympia ${{ matrix.step }} $(date -u +%Y-%m-%dT%H:%MZ)"
+          git push -f "https://x-access-token:${{ github.token }}@github.com/${{ github.repository }}" HEAD:olympia-${{ matrix.step }}
