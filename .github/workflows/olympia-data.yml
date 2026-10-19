@@ -1,0 +1,36 @@
+name: Fetch Olympia map data
+on:
+  push:
+    branches: [olympia-data]
+    paths: ['fetch_olympia.py', '.github/workflows/olympia-data.yml', 'RUN']
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: olympia-data
+  cancel-in-progress: false
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: olympia-data
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install tools
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq gdal-bin > /dev/null
+          pip install -q pyproj overturemaps
+      - name: Fetch data
+        run: python fetch_olympia.py
+      - name: Commit results
+        run: |
+          git config user.name "olympia-data-bot"
+          git config user.email "olympia-data-bot@users.noreply.github.com"
+          find data -type f -size +95M -print -delete
+          git add data
+          git commit -m "Olympia geodata $(date -u +%Y-%m-%dT%H:%MZ)" || echo "nothing to commit"
+          git push origin HEAD:olympia-data
