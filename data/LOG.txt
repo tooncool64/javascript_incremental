@@ -1,0 +1,5 @@
+22:53:10 == step osm
+22:53:10   overpass https://overpass-api.de/api/interpreter
+22:53:58   elements 611752 bytes 70469708
+22:54:02 == ok osm 52s
+22:54:02 done
